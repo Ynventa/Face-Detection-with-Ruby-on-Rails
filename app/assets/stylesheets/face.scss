@@ -1,0 +1,19 @@
+// Place all the styles related to the face controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo{
+  position: relative;
+}
+
+.pointer{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: red;
+  border-radius: 10px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  z-index: 1000
+}

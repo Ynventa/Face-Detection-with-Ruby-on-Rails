@@ -1,0 +1,19 @@
+<h1>Face detection</h1>
+<p> Status: <%= @faces["status"] %> </p>
+<p> Faces: <%= @faces["photos"].count %> </p>
+
+
+<% @faces["photos"].each do |url| %>
+<% pid = url["pid"].gsub(/[^0-9A-Za-z]/, '') %>
+  <div class="photo" id="photo_<%= pid %>">
+    <%= image_tag url["url"] %>
+  </div>
+  <% url["tags"].each do |photo| %>
+    <%= photo["recognizable"] %>
+    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["eye_left"]["x"] %>, <%= photo["eye_left"]["y"] %>,'<%= pid %>')</script>
+    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["eye_right"]["x"] %>, <%= photo["eye_right"]["y"] %>,'<%= pid %>')</script>
+    <script>//addPointer(<%= photo["center"]["x"] %>, <%= photo["center"]["y"] %>,'<%= pid %>')</script>
+    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["mouth_center"]["x"] %>, <%= photo["mouth_center"]["y"] %>,'<%= pid %>')</script>
+    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["nose"]["x"] %>, <%= photo["nose"]["y"] %>,'<%= pid %>')</script>
+  <% end %>
+<% end %>
