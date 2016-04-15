@@ -2,6 +2,8 @@
 
 #### We show you how use a gem for Face Detection in Ruby on Rails
 
+Full explanation in [ynnova-rail]
+
 1. Clone this repository
 
    ```
@@ -15,7 +17,6 @@
    bundler install (for windows)
    ```
 3. Start server
-
    ```
    rails server
    ```
@@ -28,16 +29,17 @@
   - Rubygems: [ruby-gems]
   - Sky Biometry: [sky-biometry]
 
-# Registration Sky Biometry
+# Register to Sky Biometry
 It is a requirement for use the gem. Sky Biometry has a Free plan for use your API for face detection and recognition.
 
 Once registered, you must create an app and copy the 'API Key' and 'API Secret'.
 
 # Usage
-  - Open de "app/controllers/face_controller.rb" file and add your API_Key and API_Secret.
-  - The "app/views/face/index.html.erb" file is the main home file. This file show the images with face detected.
+  - Open de "app/controllers/faces_controller.rb" file and add your API_Key and API_Secret.
+  - The "app/views/faces/index.html.erb" file is the main home file. This file show the images with face detected.
 
 
 [ruby-installer]: <https://www.ruby-lang.org/es/documentation/installation/>
 [ruby-gems]: <https://rubygems.org/>
 [sky-biometry]: <https://skybiometry.com/>
+[ynnova-rail]: <http://www.ynnova.com.ar/deteccion-de-rostros-con-ruby-on-rails/>
