@@ -15,9 +15,11 @@
    bundler install (for windows)
    ```
 3. Start server
+
    ```
    rails server
    ```
+
    You can see the welcome home in http://localhost:3000
 
 # Some links
@@ -39,4 +41,3 @@ Once registered, you must create an app and copy the 'API Key' and 'API Secret'.
 [ruby-installer]: <https://www.ruby-lang.org/es/documentation/installation/>
 [ruby-gems]: <https://rubygems.org/>
 [sky-biometry]: <https://skybiometry.com/>
- 
