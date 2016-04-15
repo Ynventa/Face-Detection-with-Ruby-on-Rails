@@ -1,4 +1,4 @@
-class FaceController < ApplicationController
+class FacesController < ApplicationController
   API_KEY = 'here_your_api_key'
   API_SECRET = 'here_your_api_secret'
 

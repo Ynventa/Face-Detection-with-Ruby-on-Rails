@@ -28,7 +28,7 @@
   - Rubygems: [ruby-gems]
   - Sky Biometry: [sky-biometry]
 
-# Register to Sky Biometry
+# Registration Sky Biometry
 It is a requirement for use the gem. Sky Biometry has a Free plan for use your API for face detection and recognition.
 
 Once registered, you must create an app and copy the 'API Key' and 'API Secret'.
