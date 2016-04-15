@@ -4,16 +4,28 @@
 
 
 <% @faces["photos"].each do |url| %>
-<% pid = url["pid"].gsub(/[^0-9A-Za-z]/, '') %>
-  <div class="photo" id="photo_<%= pid %>">
+  <div class="photo">
     <%= image_tag url["url"] %>
-  </div>
   <% url["tags"].each do |photo| %>
     <%= photo["recognizable"] %>
-    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["eye_left"]["x"] %>, <%= photo["eye_left"]["y"] %>,'<%= pid %>')</script>
-    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["eye_right"]["x"] %>, <%= photo["eye_right"]["y"] %>,'<%= pid %>')</script>
-    <script>//addPointer(<%= photo["center"]["x"] %>, <%= photo["center"]["y"] %>,'<%= pid %>')</script>
-    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["mouth_center"]["x"] %>, <%= photo["mouth_center"]["y"] %>,'<%= pid %>')</script>
-    <script>addPointer(<%= url["width"] %>, <%= url["height"] %>, <%= photo["nose"]["x"] %>, <%= photo["nose"]["y"] %>,'<%= pid %>')</script>
+
+
+      <% x = photo["eye_left"]["x"]*url["width"]/100 %>
+      <% y = photo["eye_left"]["y"]*url["height"]/100 %>
+      <span class="pointer" style="top:<%= y %>px; left:<%= x %>px;"></span>
+
+      <% x = photo["eye_right"]["x"]*url["width"]/100 %>
+      <% y = photo["eye_right"]["y"]*url["height"]/100 %>
+      <span class="pointer" style="top:<%= y %>px; left:<%= x %>px;"></span>
+
+      <% x = photo["mouth_center"]["x"]*url["width"]/100 %>
+      <% y = photo["mouth_center"]["y"]*url["height"]/100 %>
+      <span class="pointer" style="top:<%= y %>px; left:<%= x %>px;"></span>
+
+      <% x = photo["nose"]["x"]*url["width"]/100 %>
+      <% y = photo["nose"]["y"]*url["height"]/100 %>
+      <span class="pointer" style="top:<%= y %>px; left:<%= x %>px;"></span>
+
   <% end %>
+  </div>
 <% end %>
